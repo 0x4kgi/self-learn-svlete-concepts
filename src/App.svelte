@@ -4,32 +4,37 @@
     import Declarations from "./lib/Declarations.svelte";
     import Props from "./lib/Props.svelte";
     import Stores from "./lib/Stores.svelte";
+    import Box from "./lib/layout/Box.svelte";
 </script>
 
 <main>
-    <HelloWorld />
-    <hr />
+    <Box>
+        <HelloWorld />
+    </Box>
 
-    <p><Counter /></p>
-    <hr />
+    <Box>
+        <span slot="heading">Counter box</span>
+        <Counter />
+    </Box>
 
-    <p><Declarations /></p>
-    <hr />
+    <Box>
+        <span slot="heading">$: thingies</span>
+        <Declarations />
+    </Box>
 
-    <p><Props passedValue="hello" /></p>
-    <p><Props passedValue="1" /></p>
-    <p><Props passedValue="3" /></p>
-    <p><Props passedValue={{ name: "value" }} /></p>
-    <hr />
+    <Box>
+        <span slot="heading">Props to components</span>
+        <p><Props passedValue="hello" /></p>
+        <p><Props passedValue="1" /></p>
+        <p><Props passedValue="3" /></p>
+        <p><Props passedValue={{ name: "value" }} /></p>
+    </Box>
 
-    <p><Stores /></p>
-    <hr />
+    <Box>
+        <span slot="heading">"Global variables"</span>
+        <Stores />
+    </Box>
 </main>
 
 <style>
-    main {
-        text-align: center;
-        margin: auto;
-        font-size: larger;
-    }
 </style>

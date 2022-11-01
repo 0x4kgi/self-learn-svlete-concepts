@@ -8,5 +8,5 @@
     }
 </script>
 
-<input type="text" bind:value />
+<input type="number" bind:value />
 <button on:click={updateCustomValue}>update</button>
